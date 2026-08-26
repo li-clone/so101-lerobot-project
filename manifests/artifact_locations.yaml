@@ -1,0 +1,33 @@
+verified_at: 2026-08-26
+
+source:
+  repository: https://github.com/li-clone/so101-lerobot-project
+  visibility: public
+  branch: main
+
+artifacts:
+  datasets:
+    repo_id: kerong111/so101-pick-place-data-private
+    url: https://huggingface.co/datasets/kerong111/so101-pick-place-data-private
+    visibility: private
+    verified_file_count: 65
+    contents:
+      - training/so101_pick_place_v1
+      - training/so101_pick_place_v2_70
+      - evaluation/rollout_act_v1_fixed_eval_10
+      - evaluation/rollout_act_v2_n50_balanced_eval_15
+  models:
+    repo_id: kerong111/so101-act-models-private
+    url: https://huggingface.co/kerong111/so101-act-models-private
+    visibility: private
+    verified_file_count: 35
+    contents:
+      - act_v1/checkpoints/045000/pretrained_model
+      - act_v1/checkpoints/050000/pretrained_model
+      - act_v2/checkpoints/030000/pretrained_model
+      - act_v2/checkpoints/050000/pretrained_model
+
+verification:
+  dataset_manifests: 74/74 local files verified before upload
+  model_manifest: 28/28 local files verified before upload
+  remote_weight_sha256: 4/4 model.safetensors verified through Hub LFS metadata

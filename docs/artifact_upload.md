@@ -1,5 +1,8 @@
 # 数据、模型与公开材料上传清单
 
+当前实际存储位置与验收状态见
+[`manifests/artifact_locations.yaml`](../manifests/artifact_locations.yaml)。
+
 ## GitHub 公共仓库
 
 上传本仓库中已经跟踪的文档、代码、配置模板、CSV、SVG和 SHA-256 清单。不要上传：
