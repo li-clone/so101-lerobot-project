@@ -1,0 +1,3 @@
+version,checkpoint,n_action_steps,near_successes,near_trials,medium_successes,medium_trials,far_successes,far_trials,total_successes,total_trials,success_rate
+ACT v1,045000,100,,,,,,,8,10,0.800
+ACT v2,030000,50,4,5,5,5,4,5,13,15,0.867

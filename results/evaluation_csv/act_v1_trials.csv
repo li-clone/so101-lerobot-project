@@ -1,0 +1,11 @@
+record_type,episode,distance_group,success,attempts,failure_reason,notes
+trial,0,varied,true,1,,successful placement
+trial,1,varied,true,1,,successful placement
+trial,2,varied,true,1,,successful placement
+trial,3,farther,false,1,missed_grasp,object and target were farther apart
+trial,4,varied,true,1,,successful placement
+trial,5,varied,true,1,,successful placement
+trial,6,varied,true,1,,successful placement
+trial,7,varied,true,1,,successful placement
+trial,8,varied,true,1,,successful placement
+trial,9,farther,false,1,missed_grasp,object and target were farther apart

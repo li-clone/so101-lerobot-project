@@ -1,0 +1,3 @@
+v2_episode_start,v2_episode_end,source_artifact,source_episode_start,source_episode_end,purpose
+0,49,so101_pick_place_v1,0,49,original fixed-layout demonstrations
+50,69,so101_pick_place_v2_supplement_far,0,19,targeted near/medium/far distance coverage

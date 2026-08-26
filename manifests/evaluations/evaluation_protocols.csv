@@ -1,0 +1,3 @@
+evaluation_id,policy_checkpoint,n_action_steps,max_relative_target,trials,successes,protocol
+act_v1_fixed_eval_10,act_v1_045000,100,None,10,8,object position varied slightly; not distance-balanced
+act_v2_n50_balanced_eval_15,act_v2_030000,50,None,15,13,5 near + 5 medium + 5 far

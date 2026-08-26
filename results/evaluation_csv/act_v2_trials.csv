@@ -1,0 +1,12 @@
+record_type,episode,distance_group,success,attempts,failure_reason,notes
+trial,0,near,true,1,,successful placement
+trial,1,near,true,1,,successful placement
+trial,2,near,true,1,,successful placement
+trial,3,near,true,1,,successful placement
+trial,4,near,false,3,target_moved,edge grasp followed by pushing the black target box
+trial,5,medium,true,,,successful placement
+trial,6,medium,true,,,successful placement
+trial,7,medium,true,,,successful placement
+trial,8,medium,true,,,successful placement
+trial,9,medium,true,,,successful placement
+group_summary,,far,4/5,,repeated_missed_grasp,exact failed episode order was not preserved in written notes; no ID is invented

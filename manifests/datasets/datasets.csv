@@ -1,0 +1,6 @@
+artifact_id,purpose,episodes,frames,fps,resolution,camera_keys,private_storage
+so101_pick_place_v1,ACT v1 training,50,16881,20,640x480,handeye|environment,kerong111/so101-pick-place-data-private
+so101_pick_place_v2_supplement_far,ACT v2 targeted supplement,20,6987,20,640x480,handeye|environment,represented by v2 episodes 50-69
+so101_pick_place_v2_70,ACT v2 merged training,70,23868,20,640x480,handeye|environment,kerong111/so101-pick-place-data-private
+rollout_act_v1_fixed_eval_10,ACT v1 hardware evaluation,10,2965,20,640x480,handeye|environment,kerong111/so101-pick-place-data-private
+rollout_act_v2_n50_balanced_eval_15,ACT v2 balanced hardware evaluation,15,5119,20,640x480,handeye|environment,kerong111/so101-pick-place-data-private

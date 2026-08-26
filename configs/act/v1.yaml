@@ -1,0 +1,28 @@
+experiment_id: act_so101_pick_place_v1_v1_50k
+dataset:
+  repo_id: local/so101_pick_place_v1
+  episodes: 50
+  frames: 16881
+  fps: 20
+  cameras: [handeye, environment]
+training:
+  policy: act
+  steps: 50000
+  batch_size: 16
+  seed: 1000
+  eval_split: 0.1
+  eval_steps: 1000
+  save_freq: 5000
+  use_amp: false
+selection:
+  best_checkpoint: 45000
+  best_eval_loss: 0.3095
+  retained_checkpoints: [45000, 50000]
+deployment:
+  n_action_steps: 100
+  max_relative_target: null
+  fps: 20
+  duration_s: 60
+evaluation:
+  trials: 10
+  successes: 8

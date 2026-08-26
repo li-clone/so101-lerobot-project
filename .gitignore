@@ -1,0 +1,80 @@
+# Local hardware and calibration
+configs/hardware_ports.local.yaml
+hardware_ports.local.yaml
+calibration/
+**/calibration/*.json
+.cache/
+
+# Secrets and local environment
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.token
+
+# Python / editors / OS
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*~
+*.swp
+
+# Datasets and raw evaluations: public metadata lives in manifests/ and results/
+/data/
+/datasets/
+/raw_data/
+/processed_data/
+
+# Models, complete logs and generated training outputs
+/outputs/
+/checkpoints/
+/checkpoint*/
+*.safetensors
+*.ckpt
+*.pth
+*.pt
+*.log
+wandb/
+runs/
+tensorboard/
+
+# Raw media. Deliberately selected public clips may be force-added after review.
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.webm
+*.m4v
+*.bag
+
+# Build and temporary files
+build/
+dist/
+*.egg-info/
+*.tmp
+*.temp
+tmp/
+temp/
+core
+core.*
+
+# Private legacy workspace notes retained locally, not part of the public repository
+so101_project/
+docs/DECISIONS.md
+docs/ENVIRONMENT_SETUP.md
+docs/EXPERIMENT_LOG.md
+docs/HARDWARE.md
+docs/PROJECT_CONTEXT.md
+docs/ROADMAP_15D.md
+docs/SETUP_STATUS.md
+SO-ARM101*.pdf
