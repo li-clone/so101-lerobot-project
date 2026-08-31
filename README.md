@@ -2,6 +2,8 @@
 
 这个仓库记录一套可复现的 SO-101 模仿学习闭环：硬件检查、双摄像头采集、ACT 训练、实机 rollout、失败分析和针对性补数。当前公开阶段覆盖 ACT v1 与 ACT v2。
 
+对应的 Diffusion Policy 独立项目见 [so101-lerobot-diffusion-policy](https://github.com/li-clone/so101-lerobot-diffusion-policy)。
+
 任务描述：`Pick up the fixed yellow cable bundle and place it in the black target area.`
 
 ## 结果摘要
@@ -16,6 +18,35 @@ v1 与 v2 的验证集和实机评测协议不同，上表不能作为严格的�
 ![ACT validation curves](results/figures/act_eval_curves.svg)
 
 ![Hardware rollout success rate](results/figures/hardware_success_rate.svg)
+
+## ACT 与 Diffusion Policy 对比
+
+两组实验共享 SO-101、手眼与第三视角双摄像头、640×480 输入、20 FPS、6 维关节状态与动作、70 条演示、50k 训练步、batch size 16、seed 1000，以及近/中/远各 5 次的实机评测结构。
+
+| 对比项 | ACT v2 | Diffusion Policy v1 |
+|---|---|---|
+| 训练数据 | 70 episodes / 23,868 frames | 70 episodes / 21,016 frames |
+| 核心模型 | CVAE + Transformer | 条件 1D U-Net + DDPM |
+| 视觉编码 | 双视角 ResNet-18 | 双视角独立 ResNet-18 |
+| 历史观测 | 1 帧 | 2 帧 |
+| 可学习参数 | 51,597,190 | 277,819,846 |
+| 状态/动作归一化 | Mean/Std | Min/Max |
+| 优化器学习率 | `1e-5` | `1e-4` |
+| 最佳已保存点 | 30k | 5k |
+| 部署动作数 | `n_action_steps=50` | `n_action_steps=32` |
+| 推理方式 | 一次前向生成动作块 | 10 次迭代去噪生成动作块 |
+| 计算特征 | 延迟低，更接近目标控制频率 | 计算量更大，需减少去噪步数 |
+
+### 实机结果
+
+| 策略 | 近 | 中 | 远 | 总计 |
+|---|---:|---:|---:|---:|
+| ACT v2（30k） | 4/5 | 5/5 | 4/5 | 13/15（86.7%） |
+| Diffusion v1（5k） | 5/5 | 5/5 | 5/5 | **15/15（100%）** |
+
+Diffusion 的 15 次成功中，12 次首次抓取成功；3 次首次抓取失败后均自主回抓成功。ACT v2 的失败包括一次近距离抓取后推动黑色目标盒，以及一次远距离重复空抓仍未成功。
+
+本结果是本次两套相似视角、相同距离分布实验中的观察结果。两者训练数据并非同一数据集，摄像头机位也不是逐像素一致；每个策略只有 15 次实机试验。因此 `15/15` 与 `13/15` 不能推广为 Diffusion Policy 在一般任务上必然优于 ACT。不同策略的 eval loss 定义和尺度不同，也不能直接横向比较。Diffusion 的完整训练、10步去噪部署和逐次评测证据位于对应独立仓库。
 
 ## 硬件与软件
 
