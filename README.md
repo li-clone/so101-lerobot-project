@@ -2,7 +2,15 @@
 
 这个仓库记录一套可复现的 SO-101 模仿学习闭环：硬件检查、双摄像头采集、ACT 训练、实机 rollout、失败分析和针对性补数。当前公开阶段覆盖 ACT v1 与 ACT v2。
 
-对应的 Diffusion Policy 独立项目见 [so101-lerobot-diffusion-policy](https://github.com/li-clone/so101-lerobot-diffusion-policy)。
+## 三项目学习导航
+
+这三个独立仓库依次记录同一套 SO-101 × LeRobot 学习演进：
+
+1. **ACT（本仓库）**：Transformer Action Chunking，建立单指令双视角基线。
+2. [Diffusion Policy](https://github.com/li-clone/so101-lerobot-diffusion-policy)：迭代去噪动作生成与闭环恢复。
+3. [SmolVLA](https://github.com/li-clone/so101-lerobot-smolvla)：语言条件、黑白双目标与布局互换。
+
+三者的数据、任务、评测协议和 loss 定义不同；导航体现学习关系，不构成算法排行榜。
 
 任务描述：`Pick up the fixed yellow cable bundle and place it in the black target area.`
 
